@@ -110,8 +110,58 @@
 	
 	<!-- MARKET DISTRICT -->
 	
-	var market01 = L.latLng([70.0625, -137.125]);
-	L.marker(market01).addTo(map).bindPopup("<b>The Emperor's Wardrobe</b>");
+	//var market01 = L.latLng([11.625, -70.025]);
+	//L.marker(market01).addTo(map).bindPopup("<b>The Emperor's Wardrobe</b>");
+	
+	//var market02 = L.latLng([11.625, -70.025]);
+	//L.marker(market02).addTo(map).bindPopup("<b>The Sugared Plum</b>");
+	
+	
+	var market01 = L.polygon([
+	[8.4,-79.399], // bottom left
+	[18.95,-68.55], //top left
+	[15.9,-61.712], //top right
+	[4.15,-68.837], //bottom right
+	],{
+	color: 'yellow',
+	opacity: .2
+	}).addTo(map).bindPopup("<b>The Emporer's Wardrobe</b>");
+	
+	
+	var market02 = L.polygon([
+	[18.95,-68.55], // bottom left
+	[25.569,-62.831], //top left
+	[22.756,-57.4875], //top right
+	[15.53125,-60.922], //bottom right
+	],{
+	color: 'yellow',
+	opacity: .2
+	}).addTo(map).bindPopup("<b>The Sugared Plum</b>");
+	
+	
+	var market03 = L.polygon([
+	[25.569,-62.831], // bottom left
+	[33.556,-54.6], //top left
+	[29.056,-46.318], //top right
+	[19.71875,-51.1875], //bottom left
+	],{
+	color: 'yellow',
+	opacity: .2
+	}).addTo(map).bindPopup("<b>Melinda's Leather Goods</b>");
+	
+	
+	var market04 = L.polygon([
+	[4.15,-68.837], // bottom left
+	[10.728,-64.8], //top left
+	[7.125,-56.206], //top right
+	[1.281,-59.703], //bottom left
+	],{
+	color: 'yellow',
+	opacity: .2
+	}).addTo(map).bindPopup("<b>Emberline's Herbs & Salves</b>");
+	
+	
+	
 	
 	
 	// set map view -- center location, zoom level
