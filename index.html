@@ -5,7 +5,132 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <title>Brightshore Map</title>
+	
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 600px;
+		}
+	</style>
+	
 </head>
 <body>
+
+<div id='map'></div>
+
+<script>
+
+	// create map object
+	var map = L.map('map', {
+		crs: L.CRS.Simple,
+		minZoom: 0
+	});
+	
+	
+	// set bounds and map image
+	var bounds = [[-200, -200], [200, 200]];
+	var image = L.imageOverlay('./map_images/BrightshoreCityMap_noSidebars.png', bounds).addTo(map);
+	
+	
+	
+	<!-- DOCKYARD DISTRICT -->
+	
+	var dockyard01 = L.latLng([150.9875, -152.662499]);
+	L.marker(dockyard01).addTo(map).bindPopup("<b>Dry Dock</b>");
+	
+	var dockyard06 = L.latLng([140.200001, -154.949993]);
+	L.marker(dockyard06).addTo(map).bindPopup("<b>Shipyard</b>");
+	
+	var dockyard10 = L.latLng([101.200001, -122.199993]);
+	L.marker(dockyard10).addTo(map).bindPopup("<b>The Nicked Rock</b>");
+	
+	var dockyard12 = L.latLng([112.950001, -159.199993]);
+	L.marker(dockyard12).addTo(map).bindPopup("<b>Tattoo Parlor</b>");
+	
+	var dockyard20 = L.latLng([128.200001, -95.549988]);
+	L.marker(dockyard20).addTo(map).bindPopup("<b>Harbormaster's Office</b>");
+	
+	var dockyard32 = L.latLng([122.7, -59.05]);
+	L.marker(dockyard32).addTo(map).bindPopup("<b>Customs Office</b>");
+	
+	var dockyard40 = L.latLng([108, -46.5]);
+	L.marker(dockyard40).addTo(map).bindPopup("<b>Barker's Barrels</b>");
+	
+	var dockyard43 = L.latLng([82.5, -45.25]);
+	L.marker(dockyard43).addTo(map).bindPopup("<b>Balmond's Brewhouse</b></br>Owner: Balmond (NPC)</br>");
+	
+	
+	
+	
+	<!-- PARK DISTRICT -->
+	
+	var park11 = L.latLng([43.65, -7.65]);
+	L.marker(park11).addTo(map).bindPopup("<b>Park</b>");
+	
+	var park12 = L.latLng([26.9, -30.15]);
+	L.marker(park12).addTo(map).bindPopup("<b>Sleeping Dragon</b>");
+	
+	var park13 = L.latLng([41.375, 26.275]);
+	L.marker(park13).addTo(map).bindPopup("<b>Cibriel's House</b></br>Owner: Cibriel (PC)");
+	
+	var park20 = L.latLng([19.55, 32.25]);
+	L.marker(park20).addTo(map).bindPopup("<b>Durnquist Manor</b></br>Owner: Durnquist (NPC)");
+	
+	var park25 = L.latLng([9.05, 38.5]);
+	L.marker(park25).addTo(map).bindPopup("<b>Oley Family</b>");
+	
+	
+	
+	
+	<!-- TEMPLE DISTRICT -->
+	
+	var temple01 = L.latLng([70.0625, -137.125]);
+	L.marker(temple01).addTo(map).bindPopup("<b>Binval's Home</b></br>Owner: Binval (Deceased PC)");
+	
+	var temple09 = L.latLng([58.75, -120.375]);
+	L.marker(temple09).addTo(map).bindPopup("<b>Bradford Manor</b></br>Owner: Bradford (NPC)");
+	
+	var temple15 = L.latLng([35.525, -98.099]);
+	L.marker(temple15).addTo(map).bindPopup("<b>Temple of Menran</b>");
+	
+	var temple16 = L.latLng([43.575, -78.125]);
+	L.marker(temple16).addTo(map).bindPopup("<b>Temples of Ava & Unre</b>");
+	
+	var temple17 = L.latLng([24.55, -84.65]);
+	L.marker(temple17).addTo(map).bindPopup("<b>Temple of Olteus</b>");
+	
+	var temple18 = L.latLng([68.825, -74.875]);
+	L.marker(temple18).addTo(map).bindPopup("<b>Sweet's Armory</b>");
+	
+	
+	
+	<!-- MARKET DISTRICT -->
+	
+	var market01 = L.latLng([70.0625, -137.125]);
+	L.marker(market01).addTo(map).bindPopup("<b>The Emperor's Wardrobe</b>");
+	
+	
+	// set map view -- center location, zoom level
+	map.setView( [0, 0], -1);
+	
+	
+	<!-- Used for on click to get coordinates. Comment out during prod rollout -->
+	var popup = L.popup();
+	
+	function onMapClick(e){
+		popup
+			.setLatLng(e.latlng)
+			.setContent("LatLong:  " + e.latlng.toString())
+			.openOn(map);
+	}
+	
+	map.on('click', onMapClick);
+	
+</script>
+
 </body>
 </html>
