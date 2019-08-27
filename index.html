@@ -37,51 +37,358 @@
 	
 	
 	
+	<!-- Default markers in various colors -->
+	
+	var blackIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var blueIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var greenIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var greyIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var orangeIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var redIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var violetIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var yellowIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	
+	
 	<!-- DOCKYARD DISTRICT -->
 	
-	var dockyard01 = L.latLng([150.9875, -152.662499]);
-	L.marker(dockyard01).addTo(map).bindPopup("<b>Dry Dock</b>");
+	var dockyard01 = L.latLng([150.99, -152.66]);
+	L.marker(dockyard01, {icon: blueIcon}).addTo(map).bindPopup("<b>Dry Dock</b></br>Owner:  Brunhild (NPC)</br></br>"+
+	"<i>The city has need of both ships and repairs, but not in significant amount. Sol Hathorsson was the original admiral of Orrin's ships,"+
+	" and built the dry docks originally to repair what was left of Orrin's fleet. However, due to the need to make new ships, Sol worked with his "+
+	"sister, Brunhild, to create a shipyard as well.</br></br>After nearly 20 years of working on land, Sol left all his ownership of the Drydocks "+
+	"and Shipyard to his sister and became a Captain again under the council. Some say this was caused by the death of his wife and his desire to "+
+	"die on the sea, others think he enjoys the challenge of bringing new folks to the city. Captain Sol himself stays silent on that particular matter but is very gregarious otherwise</i></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 1</sup></p>");
 	
-	var dockyard06 = L.latLng([140.200001, -154.949993]);
-	L.marker(dockyard06).addTo(map).bindPopup("<b>Shipyard</b>");
+	//var dockyard02 = L.latLng([147.99, -143.38]);
+	//L.marker(dockyard02, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
-	var dockyard10 = L.latLng([101.200001, -122.199993]);
-	L.marker(dockyard10).addTo(map).bindPopup("<b>The Nicked Rock</b>");
+	//var dockyard03 = L.latLng([146.06, -135.44]);
+	//L.marker(dockyard03, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
-	var dockyard12 = L.latLng([112.950001, -159.199993]);
-	L.marker(dockyard12).addTo(map).bindPopup("<b>Tattoo Parlor</b>");
+	//var dockyard04 = L.latLng([134.44, -128.76]);
+	//L.marker(dockyard04, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
-	var dockyard20 = L.latLng([128.200001, -95.549988]);
-	L.marker(dockyard20).addTo(map).bindPopup("<b>Harbormaster's Office</b>");
+	//var dockyard05 = L.latLng([137.75, -111.39]);
+	//L.marker(dockyard05, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var dockyard06 = L.latLng([140.32, -153.56]);
+	L.marker(dockyard06, {icon: blueIcon}).addTo(map).bindPopup("<b>Shipyard</b></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 6</sup></p>");
+	
+	//var dockyard07 = L.latLng([129.00, -159.75]);
+	//L.marker(dockyard07, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard08 = L.latLng([118.51, -118.08]);
+	//L.marker(dockyard08, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard09 = L.latLng([115.44, -149.13]);
+	//L.marker(dockyard09, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var dockyard10 = L.latLng([101.2, -122.2]);
+	L.marker(dockyard10, {icon: blueIcon}).addTo(map).bindPopup("<b>The Nicked Rock</b></br></br>"+
+	"<i>One of Brightshore's Inns. The Nicked Rock is built around a pillar with a single nick in it, about waist high on a human. The pillar is otherwise "+
+	"perfectly smooth and seems to emit no magic. Anyone who has struck it, with blade or magic, has yet to mark it. For a gold, "+
+	"anyone can try a swing, and there is an ever-rising purse to the victor, if they can make a mark. </br></br>The Nicked Rock, "+
+	"due to allowing weapons in for the challenge, is an inn full of armed people and stays relatively civil.</i></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 10</sup></p>");
+	
+	//var dockyard11 = L.latLng([118.38, -166.12]);
+	//L.marker(dockyard11, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var dockyard12 = L.latLng([112.95, -159.2]);
+	L.marker(dockyard12, {icon: blueIcon}).addTo(map).bindPopup("<b>Tattoo Parlor</b></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 12</sup></p>");
+	
+	//var dockyard13 = L.latLng([107.88, -164.24]);
+	//L.marker(dockyard13, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard14 = L.latLng([100.75, -156.37]);
+	//L.marker(dockyard14, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard15 = L.latLng([93.26, -142.503]);
+	//L.marker(dockyard15, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard16 = L.latLng([87.009, -151.999]);
+	//L.marker(dockyard16, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard17 = L.latLng([82.135, -145.63]);
+	//L.marker(dockyard17, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard18 = L.latLng([84.759, -131.258]);
+	//L.marker(dockyard18, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard19 = L.latLng([77.397, -139.515]);
+	//L.marker(dockyard19, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var dockyard20 = L.latLng([128.2, -95.55]);
+	L.marker(dockyard20, {icon: blueIcon}).addTo(map).bindPopup("<b>Harbormaster's Office</b></br>Harbormaster:  Keflir Solsson (NPC)</br></br>"+
+	"<i>The Harbormaster acts as both the official in charge of maritime commerce and the deputy of maritime law. Although technically under"+
+	" the supervision of the Council, the Harbormaster has broad discretion in what is acceptable and what's not and acts as the primary law "+
+	"official. A gaol sits underneath the Harbormasters' Office, where lawbreakers are held until the Council transfers them for adjudication.</br></br>"+
+	"The current Harbormaster is Keflir Solsson, nephew of the Shipyard owner Brunhild Hafthorsdottir and son of Captain Sol Hafthorsson.</i></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 20</sup></p>");
+	
+	//var dockyard21 = L.latLng([124.25, -70.514]);
+	//L.marker(dockyard21, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard22 = L.latLng([116.51, -103.38]);
+	//L.marker(dockyard22, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard23 = L.latLng([109.51, -95.51]);
+	//L.marker(dockyard23, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard24 = L.latLng([112.39, -74.27]);
+	//L.marker(dockyard24, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard25 = L.latLng([106.134, -106.255]);
+	//L.marker(dockyard25, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard26 = L.latLng([102.889, -87.39]);
+	//L.marker(dockyard26, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard27 = L.latLng([100.14, -78.768]);
+	//L.marker(dockyard27, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard28 = L.latLng([93.016, -104.258]);
+	//L.marker(dockyard28, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard29 = L.latLng([90.392, -86.765]);
+	//L.marker(dockyard29, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard30 = L.latLng([84.39, -106.63]);
+	//L.marker(dockyard30, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard31 = L.latLng([78.02, -89.264]);
+	//L.marker(dockyard31, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	var dockyard32 = L.latLng([122.7, -59.05]);
-	L.marker(dockyard32).addTo(map).bindPopup("<b>Customs Office</b>");
+	L.marker(dockyard32, {icon: blueIcon}).addTo(map).bindPopup("<b>Customs Office</b></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 32</sup></p>");
+	
+	//var dockyard33 = L.latLng([110.567, -62.634]);
+	//L.marker(dockyard33, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard34 = L.latLng([110.255, -54.512]);
+	//L.marker(dockyard34, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard35 = L.latLng([97.45, -65.44]);
+	//L.marker(dockyard35, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard36 = L.latLng([91.01, -56.199]);
+	//L.marker(dockyard36, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard37 = L.latLng([85.199, -69.631]);
+	//L.marker(dockyard37, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard38 = L.latLng([114.004, -46.325]);
+	//L.marker(dockyard38, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard39 = L.latLng([113.316, -35.89]);
+	//L.marker(dockyard39, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	var dockyard40 = L.latLng([108, -46.5]);
-	L.marker(dockyard40).addTo(map).bindPopup("<b>Barker's Barrels</b>");
+	L.marker(dockyard40, {icon: blueIcon}).addTo(map).bindPopup("<b>Barker's Barrels</b></br>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 40</sup></p>");
+	
+	//var dockyard41 = L.latLng([97.314, -47.251]);
+	//L.marker(dockyard41, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var dockyard42 = L.latLng([97.567, -36.383]);
+	//L.marker(dockyard42, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	var dockyard43 = L.latLng([82.5, -45.25]);
-	L.marker(dockyard43).addTo(map).bindPopup("<b>Balmond's Brewhouse</b></br>Owner: Balmond (NPC)</br>");
+	L.marker(dockyard43, {icon: blueIcon}).addTo(map).bindPopup("<b>Balmond's Brew House</b></br>Owner: Balmond (NPC)</br></br>"+
+	"<i>Balmond's is run by Balmon: a surly dwarf who is now a retired adventure. The tap room is run by a half-elf on Balmond's behalf. Her "+
+	"name is Falhanna; however, Balmond calls her Wannabe as she is neither elf or human. Currently on tap:<ul><li>Balmond's Best - Amber Ale</li>"+
+	"<li>Balmond's Steller Stout</li>"+
+	"<li>Balmond's Breakfast - Coffee Ale</li>"+
+	"<li>Balmonds's Campfire Delight - Ale that tastes like s'mores, has a smokey start and a sweet finish</li>"+
+	"<li>Demon's Spit - Whiskey with a maple syrup base</li></ul></i>"+
+	"<p style='text-align:right'><sup>Dockyard District - Parcel 43</sup></p>");
 	
+	//var dockyard44 = L.latLng([82.008, -33.884]);
+	//L.marker(dockyard44, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	
 	
 	<!-- PARK DISTRICT -->
 	
-	var park11 = L.latLng([43.65, -7.65]);
-	L.marker(park11).addTo(map).bindPopup("<b>Park</b>");
+	//var park01 = L.latLng([113.011, -25.007]);
+	//L.marker(park01, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park02 = L.latLng([118.134, -18.634]);
+	//L.marker(park02, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var park03 = L.latLng([118.26, -10.513]);
+	L.marker(park03, {icon: blueIcon}).addTo(map).bindPopup("<b>Cleo Catra Manor</b></br></br>"+
+	"<i>Money was raised by Brightshore adventurers during the winter of Year 23 to help those in need of warm food, a warm bed, "+
+	"and new opportunities.  It is a 21k sq feet building spread over three stories."+
+	"The area dedicated to training and eduction will be known as Gost Academy: named after the largest donor.</i>"+
+	"<p style='text-align:right'><sup>Park District - Parcel 3</sup></p>");
+	
+	//var park04 = L.latLng([116.635, -2.89]);
+	//L.marker(park04, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park05 = L.latLng([117.135, 3.856]);
+	//L.marker(park05, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park06 = L.latLng([109.012, 7.48]);
+	//L.marker(park06, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park07 = L.latLng([99.015, -21.88]);
+	//L.marker(park07, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park08 = L.latLng([91.89, -15.634]);
+	//L.marker(park08, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park09 = L.latLng([88.767, 14.481]);
+	//L.marker(park09, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park10 = L.latLng([79.77, -13.76]);
+	//L.marker(park10, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park11 = L.latLng([75.021, 12.482]);
+	//L.marker(park11, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	var park11p = L.latLng([44.513, -7.523]);
+	L.marker(park11p, {icon: blueIcon}).addTo(map).bindPopup("<b>Park</b></br>Caretaker: Yeoman Selene (NPC)</br></br>"+
+	"<i>The park that dominates this district was originally a garden that the colony planted to supplement their food supply "+
+	"until farms outside the city could be established. It was transformed into a public green space by Yeoman Selene, when "+
+	"she took over the position from her grandfather, Forrest. All Brightshore residents are allowed to wander through the "+
+	"park at will, but Selene is known to keep a close eye on the plants and trees and give a stern warning to anyone who "+
+	"doesn't show them proper respect.</br></br>The park, which has no official name, covers about four acres and is mostly "+
+	"a fairly flat, open grass field, dotted with trees. A statue of a sleeping dragon sits in the southwestern portion of "+
+	"the park (near the Temple and Market districts), a relic of the ancient city that was been repaired by an enterprising "+
+	"Brightshore artist. The northeastern corner of the park features a small but dense copse of trees, including one that "+
+	"produces a Draobmi-native fruit called spiky oranges.</i></br>"+
+	"<p style='text-align:right'><sup>Park District - Parcel 11</sup></p>");
 	
 	var park12 = L.latLng([26.9, -30.15]);
-	L.marker(park12).addTo(map).bindPopup("<b>Sleeping Dragon</b>");
+	L.marker(park12, {icon: blueIcon}).addTo(map).bindPopup("<b>Sleeping Dragon</b></br></br>"+
+	"<i>This eight-foot tall painted statue depicts a sleeping bronze dragon, curled up on a raised dais in a sunny "+
+	"part of the park. Its wings are folded in close to its back, and closer inspection reveals one of them was "+
+	"grafted on recently. The dragon's tail, snout, and both of its horns also appear to have been recently repaired."+
+	"On the front of the dais, a sign reads 'Please do not climb on me'.</br></br>In the mornings, smoke drifts from the "+
+	"dragon's nostrils for several hours, though the statue has never moved (so far as anyone can tell).</i>");
 	
 	var park13 = L.latLng([41.375, 26.275]);
-	L.marker(park13).addTo(map).bindPopup("<b>Cibriel's House</b></br>Owner: Cibriel (PC)");
+	L.marker(park13, {icon: blueIcon}).addTo(map).bindPopup("<b>Cibriel's House</b></br>Owner: Cibriel (PC)</br>"+
+	"<p style='text-align:right'><sup>Park District - Parcel 13</sup></p>");
+	
+	//var park14 = L.latLng([44.937, 28.115]);
+	//L.marker(park14, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park15 = L.latLng([31.878, 26.365]);
+	//L.marker(park15, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park16 = L.latLng([37.252, 31.426]);
+	//L.marker(park16, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park17 = L.latLng([23.131, 24.804]);
+	//L.marker(park17, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park18 = L.latLng([31.191, 35.986]);
+	//L.marker(park18, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park19 = L.latLng([12.634, 23.804]);
+	//L.marker(park19, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	var park20 = L.latLng([19.55, 32.25]);
-	L.marker(park20).addTo(map).bindPopup("<b>Durnquist Manor</b></br>Owner: Durnquist (NPC)");
+	L.marker(park20, {icon: blueIcon}).addTo(map).bindPopup("<b>Durnquist Manor</b></br>Owner: Durnquist (NPC)</br>"+
+	"<p style='text-align:right'><sup>Park District - Parcel 20</sup></p>");
+	
+	//var park21 = L.latLng([28.39, 39.48]);
+	//L.marker(park21, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park22 = L.latLng([24.89, 42.48]);
+	//L.marker(park22, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park23 = L.latLng([2.02, 27.74]);
+	//L.marker(park23, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park24 = L.latLng([5.39, 31.62]);
+	//L.marker(park24, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	var park25 = L.latLng([9.05, 38.5]);
-	L.marker(park25).addTo(map).bindPopup("<b>Oley Family</b>");
+	L.marker(park25, {icon: blueIcon}).addTo(map).bindPopup("<b>Oley Family</b></br>"+
+	"<p style='text-align:right'><sup>Park District - Parcel 25</sup></p>");
+	
+	//var park26 = L.latLng([18.01, 44.49]);
+	//L.marker(park26, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park27 = L.latLng([-2.23, 37.615]);
+	//L.marker(park27, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park28 = L.latLng([14.014, 51.234]);
+	//L.marker(park28, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
+	
+	//var park29 = L.latLng([8.89, 57.61]);
+	//L.marker(park29, {icon: blueIcon}).addTo(map).bindPopup("<b></b>");
 	
 	
 	
@@ -89,19 +396,19 @@
 	<!-- TEMPLE DISTRICT -->
 	
 	var temple01 = L.latLng([70.0625, -137.125]);
-	L.marker(temple01).addTo(map).bindPopup("<b>Binval's Home</b></br>Owner: Binval (Deceased PC)");
+	L.marker(temple01, {icon: blueIcon}).addTo(map).bindPopup("<b>Binval's Home</b></br>Owner: Binval (Deceased PC)");
 	
 	var temple09 = L.latLng([58.75, -120.375]);
-	L.marker(temple09).addTo(map).bindPopup("<b>Bradford Manor</b></br>Owner: Malcolm Bradford (NPC)");
+	L.marker(temple09, {icon: blueIcon}).addTo(map).bindPopup("<b>Bradford Manor</b></br>Owner: Malcolm Bradford (NPC)");
 	
 	var temple15 = L.latLng([35.525, -98.099]);
-	L.marker(temple15).addTo(map).bindPopup("<b>Temple of Menran</b></br>Shrine Overseer: Faith (NPC)</br>");
+	L.marker(temple15, {icon: blueIcon}).addTo(map).bindPopup("<b>Temple of Menran</b></br>Shrine Overseer: Faith (NPC)</br>");
 	
 	var temple16 = L.latLng([43.575, -78.125]);
-	L.marker(temple16).addTo(map).bindPopup("<b>Temples of Ava & Unre</b></br>Ava Shrine Overseer: Ignatius (NPC)</br>Unre Shrine Overseer: Zarath (NPC)</br>");
+	L.marker(temple16, {icon: blueIcon}).addTo(map).bindPopup("<b>Temples of Ava & Unre</b></br>Ava Shrine Overseer: Ignatius (NPC)</br>Unre Shrine Overseer: Zarath (NPC)</br>");
 	
 	var temple17 = L.latLng([24.55, -84.65]);
-	L.marker(temple17).addTo(map).bindPopup("<b>Temple of Olteus</b></br>Shrine Overseer: Draco (NPC)</br>");
+	L.marker(temple17, {icon: blueIcon}).addTo(map).bindPopup("<b>Temple of Olteus</b></br>Shrine Overseer: Draco (NPC)</br>");
 	
 	var temple18 = L.latLng([68.825, -74.875]);
 	L.marker(temple18).addTo(map).bindPopup("<b>Sweet's Armory</b></br>Owner: Elric 'One-Eye' Sweets (NPC)</br>");
@@ -111,94 +418,52 @@
 	<!-- MARKET DISTRICT -->
 	
 	var market01 = L.latLng([11.625, -70.025]);
-	L.marker(market01).addTo(map).bindPopup("<b>The Emperor's Wardrobe</b>");
+	L.marker(market01, {icon: blueIcon}).addTo(map).bindPopup("<b>The Emperor's Wardrobe</b>");
 	
 	var market02 = L.latLng([21.125, -62.094]);
-	L.marker(market02).addTo(map).bindPopup("<b>The Sugared Plum</b>");
+	L.marker(market02, {icon: blueIcon}).addTo(map).bindPopup("<b>The Sugared Plum</b>");
 	
 	var market03 = L.latLng([26.844, -54.063]);
-	L.marker(market03).addTo(map).bindPopup("<b>Melinda's Leather Goods</b>");
+	L.marker(market03, {icon: blueIcon}).addTo(map).bindPopup("<b>Melinda's Leather Goods</b>");
 	
 	var market04 = L.latLng([5.125, -61.925]);
-	L.marker(market04).addTo(map).bindPopup("<b>Emberline's Herbs & Salves</b>");
+	L.marker(market04, {icon: blueIcon}).addTo(map).bindPopup("<b>Emberline's Herbs & Salves</b>");
 	
 	var market05 = L.latLng([21.75, -44.425]);
-	L.marker(market05).addTo(map).bindPopup("<b>The Creased Page</b></br>Owner: Nelicano (NPC)</br>");
+	L.marker(market05, {icon: blueIcon}).addTo(map).bindPopup("<b>The Creased Page</b></br>Owner: Nelicano (NPC)</br>");
 	
 	var market06 = L.latLng([18.625, -34.625]);
-	L.marker(market06).addTo(map).bindPopup("<b>Wilderness Outfitters</b>");
+	L.marker(market06, {icon: blueIcon}).addTo(map).bindPopup("<b>Wilderness Outfitters</b>");
 	
 	var market07 = L.latLng([1.5, -43.125]);
-	L.marker(market07).addTo(map).bindPopup("<b>Bennet's General Goods</b>");
+	L.marker(market07, {icon: blueIcon}).addTo(map).bindPopup("<b>Bennet's General Goods</b>");
 	
 	var market09 = L.latLng([1.0, -29.75]);
-	L.marker(market09).addTo(map).bindPopup("<b>Jory's Laboratory</b>");
-	
-	
-	<!-- These can be used instead of points - though they are much more time-intensive to do. -->
-	
-	//var market01 = L.polygon([
-	//[8.4,-79.399], // bottom left
-	//[18.95,-68.55], //top left
-	//[15.9,-61.712], //top right
-	//[4.15,-68.837], //bottom right
-	//],{
-	//color: 'yellow',
-	//opacity: .2
-	//}).addTo(map).bindPopup("<b>The Emporer's Wardrobe</b>");
-	
-	
-	//var market02 = L.polygon([
-	//[18.95,-68.55], // bottom left
-	//[25.569,-62.831], //top left
-	//[22.756,-57.4875], //top right
-	//[15.53125,-60.922], //bottom right
-	//],{
-	//color: 'yellow',
-	//opacity: .2
-	//}).addTo(map).bindPopup("<b>The Sugared Plum</b>");
-	
-	
-	//var market03 = L.polygon([
-	//[25.569,-62.831], // bottom left
-	//[33.556,-54.6], //top left
-	//[29.056,-46.318], //top right
-	//[19.71875,-51.1875], //bottom left
-	//],{
-	//color: 'yellow',
-	//opacity: .2
-	//}).addTo(map).bindPopup("<b>Melinda's Leather Goods</b>");
-	
-	
-	//var market04 = L.polygon([
-	//[4.15,-68.837], // bottom left
-	//[10.728,-64.8], //top left
-	//[7.125,-56.206], //top right
-	//[1.281,-59.703], //bottom left
-	//],{
-	//color: 'yellow',
-	//opacity: .2
-	//}).addTo(map).bindPopup("<b>Emberline's Herbs & Salves</b>");
-	
-	
+	L.marker(market09, {icon: blueIcon}).addTo(map).bindPopup("<b>Jory's Laboratory</b>");
 	
 	
 	<!-- RIVER DISTRICT -->
 	
 	var river01 = L.latLng([-34.7499, -3.825]);
-	L.marker(river01).addTo(map).bindPopup("<b>Jorpot the Shinyman</b></br>Owner: Jorpot (NPC)");
+	L.marker(river01, {icon: blueIcon}).addTo(map).bindPopup("<b>Jorpot the Shinyman</b></br>Owner: Jorpot (NPC)");
 	
 	var river14 = L.latLng([-73.9499, 20.125]);
-	L.marker(river14).addTo(map).bindPopup("<b>(X) Underground Base</b>");
+	L.marker(river14, {icon: blueIcon}).addTo(map).bindPopup("<b>(X) Underground Base</b>");
+	
+	var river22 = L.latLng([-85.72, 33.234]);
+	L.marker(river22, {icon: blueIcon}).addTo(map).bindPopup("<b>Cleo's Treehouse</b></br>Owner:  Cleo Catra (PC)");
 	
 	var river30 = L.latLng([-95.875, 51.125]);
-	L.marker(river30).addTo(map).bindPopup("<b>The Arcanum</b>");
+	L.marker(river30, {icon: blueIcon}).addTo(map).bindPopup("<b>The Arcanum</b></br>Owner: Boulder [Khedmin Boulderheart] (PC)");
 	
 	var river33 = L.latLng([-81.375, 69.3]);
-	L.marker(river33).addTo(map).bindPopup("<b>Owl's Nook</b></br>Owner: Zren (PC)");
+	L.marker(river33, {icon: blueIcon}).addTo(map).bindPopup("<b>Owl's Nook</b></br>Owner: Zren (PC)");
 	
 	var river34 = L.latLng([-105.375, 60.3]);
-	L.marker(river34).addTo(map).bindPopup("<b>Hall of Hunters</b>");
+	L.marker(river34, {icon: blueIcon}).addTo(map).bindPopup("<b>Hall of Hunters</b></br>Owner: Enailis Glanodel (PC)");
+	
+	var river39 = L.latLng([-117.461, 55.473]);
+	L.marker(river39, {icon: blueIcon}).addTo(map).bindPopup("<b>Borivik's Forge & Anvil</b></br>Owner: Borivik (PC)");
 	
 	
 	
@@ -206,31 +471,31 @@
 	<!-- TOWER DISTRICT -->
 	
 	var tower01 = L.latLng([112.2499, 23.7]);
-	L.marker(tower01).addTo(map).bindPopup("<b>The Graystone</b>");
+	L.marker(tower01, {icon: blueIcon}).addTo(map).bindPopup("<b>The Graystone</b>");
 	
 	var tower09 = L.latLng([110.799, 77.15]);
-	L.marker(tower09).addTo(map).bindPopup("<b>Stable</b>");
+	L.marker(tower09, {icon: blueIcon}).addTo(map).bindPopup("<b>Stable</b>");
 	
 	var tower10 = L.latLng([134.45, 124.55]);
-	L.marker(tower10).addTo(map).bindPopup("<b>Veil's Mur</b>");
+	L.marker(tower10, {icon: blueIcon}).addTo(map).bindPopup("<b>Veil's Mur</b>");
 	
 	var tower11 = L.latLng([102.799, 122.8]);
-	L.marker(tower11).addTo(map).bindPopup("<b>Mess Hall</b>");
+	L.marker(tower11, {icon: blueIcon}).addTo(map).bindPopup("<b>Mess Hall</b>");
 	
 	var tower12 = L.latLng([97.824, 147.825]);
-	L.marker(tower12).addTo(map).bindPopup("<b>Kitchen</b>");
+	L.marker(tower12, {icon: blueIcon}).addTo(map).bindPopup("<b>Kitchen</b>");
 	
 	var tower13 = L.latLng([68.725, 123.175]);
-	L.marker(tower13).addTo(map).bindPopup("<b>Kintsugi Tower</b>");
+	L.marker(tower13, {icon: blueIcon}).addTo(map).bindPopup("<b>Kintsugi Tower</b>");
 	
 	var tower15 = L.latLng([68.6, 45.913]);
-	L.marker(tower15).addTo(map).bindPopup("<b>Ninseycap's Luxury Imports</b></br>Owner: Ninseycap (NPC)</br>");
+	L.marker(tower15, {icon: blueIcon}).addTo(map).bindPopup("<b>Ninseycap's Luxury Imports</b></br>Owner: Ninseycap (NPC)</br>");
 	
 	var tower32 = L.latLng([42.8, 66.225]);
-	L.marker(tower32).addTo(map).bindPopup("<b>Gost Servants' Quarters</b></br>Owner: Galvin Gost (PC)");
+	L.marker(tower32, {icon: blueIcon}).addTo(map).bindPopup("<b>Gost Servants' Quarters</b></br>Owner: Galvin Gost (PC)");
 	
 	var tower47 = L.latLng([18.975, 84.775]);
-	L.marker(tower47).addTo(map).bindPopup("<b>Gost Citadel</b></br>Owner: Galvin Gost (PC)");
+	L.marker(tower47, {icon: blueIcon}).addTo(map).bindPopup("<b>Gost Citadel</b></br>Owner: Galvin Gost (PC)");
 	
 	
 	
@@ -238,13 +503,13 @@
 	<!-- CROSSROADS DISTRICT -->
 	
 	var crossroads30 = L.latLng([-19.125, 58.85]);
-	L.marker(crossroads30).addTo(map).bindPopup("<b>Central Gaurd Post</b></br>Owner: Gaurd Captain Redford Bolt (NPC)");
+	L.marker(crossroads30, {icon: blueIcon}).addTo(map).bindPopup("<b>Central Gaurd Post</b></br>Owner: Gaurd Captain Redford Bolt (NPC)");
 	
 	var crossroads50 = L.latLng([-49.99, 71.363]);
-	L.marker(crossroads50).addTo(map).bindPopup("<b>The Wink & Whistle</b></br>Owner: Beryl (NPC)");
+	L.marker(crossroads50, {icon: blueIcon}).addTo(map).bindPopup("<b>The Wink & Whistle</b></br>Owner: Beryl (NPC)");
 	
 	var crossroads51 = L.latLng([-75.363, 74.275]);
-	L.marker(crossroads51).addTo(map).bindPopup("<b>Chateau of Wonderment</b></br>Owner: Grumble Dan (NPC)");
+	L.marker(crossroads51, {icon: blueIcon}).addTo(map).bindPopup("<b>Chateau of Wonderment</b></br>Owner: Grumble Dan (NPC)");
 	
 	
 	
@@ -253,16 +518,16 @@
 	<!-- GATE DISTRICT -->
 	
 	var gate20 = L.latLng([-58.788, 104.55]);
-	L.marker(gate20).addTo(map).bindPopup("<b>Defenders' Barracks</b>");
+	L.marker(gate20, {icon: blueIcon}).addTo(map).bindPopup("<b>Defenders' Barracks</b>");
 	
 	var gate26 = L.latLng([-76.119, 94.144]);
-	L.marker(gate26).addTo(map).bindPopup("<b>Tamway's Stable</b></br>Owner: Tamway (NPC)");
+	L.marker(gate26, {icon: blueIcon}).addTo(map).bindPopup("<b>Tamway's Stable</b></br>Owner: Tamway (NPC)");
 	
 	var gate29 = L.latLng([-84.538, 102.825]);
-	L.marker(gate29).addTo(map).bindPopup("<b>Delilah's Smithy</b></br>Owner: Delilah (NPC)");
+	L.marker(gate29, {icon: blueIcon}).addTo(map).bindPopup("<b>Delilah's Smithy</b></br>Owner: Delilah (NPC)");
 	
 	var gate38 = L.latLng([-97.788, 107.0625]);
-	L.marker(gate38).addTo(map).bindPopup("<b>W. & N. Pawnbrokers</b></br>Owner: Wilgrim and Neslan (NPCs)");
+	L.marker(gate38, {icon: blueIcon}).addTo(map).bindPopup("<b>W. & N. Pawnbrokers</b></br>Owner: Wilgrim and Neslan (NPCs)");
 	
 	
 	
