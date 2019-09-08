@@ -3,10 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Brightshore Maps Index</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		.mapDesc {
+			text-align: center;
+		}
+		
+		.mapDesc img {
+			max-width: 30%;
+			max-height: 30%;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			padding: 5px;
+		}
+		
+		.mapDesc img:hover {
+			box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+		}
+		
+		.topHeader {
+			text-align: center;
+		}
+		
+		.topHeader img {
+			max-width: 90%;
+			max-height: 90%;
+			padding: 10px;
+			align: middle;
+		}
+		
+		.myTitle {
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		
+		.myDesc {
+			font-family: "Bookman Old Style", Palatino, serif;
+		}
+		
+	</style>
 </head>
 <body>
-<p>At some point, we are going to do some UI/UX. Unfortunately, Marty is not a UI/UX designer.</p>
-<p><a href="ruinsmap.html">Ruins Map</a></p>
-<p><a href="citymap.html">City Map</a></p>
+	<div>
+		<div class="topHeader">
+			<a href="http://brightshore.imboardgames.com"><img src="./css_images/header.png" alt="Brightshore"></a>
+		</div>
+		<div class="mapDesc">
+				<p class="myTitle">Ruins Map</p>
+				<p class="myDesc">Here are a bunch of words that will describe stuff below here about this and that.</p>
+				<a href="ruinsmap.html">
+					<img src="./map_images/BrightshoreRuins.png" alt="Brightshore Ruins Map">
+				</a></br>
+				<p class="myTitle">City Map</p>
+				<p class="myDesc">Here are a bunch of words that will describe stuff below here about this and that.</p>
+				<a href="citymap.html">
+					<img src="./map_images/BrightshoreCityMap_noSidebars.png" alt="Brightshore City Map">
+				</a>
+		</div>
+		<p></p>
+	</div>
 </body>
+<footer>
+</footer>
 </html>
