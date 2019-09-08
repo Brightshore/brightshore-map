@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <meta charset="UTF-8">
+    <title>Brightshore Ruins Map</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+		#pLoc {
+			font-size: 10px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script>
+
+	// create map object
+	var map = L.map('map', {
+		crs: L.CRS.Simple,
+		minZoom: 0
+	});
+
+
+	// set bounds and map image
+	var bounds = [[-200, -200], [200, 200]];
+	var image = L.imageOverlay('./map_images/BrightshoreRuins.png', bounds).addTo(map);
+
+    map.setView( [0, 0], 2);
+
+</script>
+
+</body>
+</html>
