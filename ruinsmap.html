@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <meta charset="UTF-8">
+    <title>Brightshore Ruins Map</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+		#pLoc {
+			font-size: 10px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script>
+
+	// create map object
+	var map = L.map('map', {
+		crs: L.CRS.Simple,
+		minZoom: 0
+	});
+
+
+	// set bounds and map image
+	var bounds = [[-200, -200], [200, 200]];
+	var image = L.imageOverlay('./map_images/BrightshoreRuins.png', bounds).addTo(map);
+
+    
+	<!-- Default markers in various colors -->
+	
+	var blackIcon = new L.Icon({
+		iconUrl: './icon_images/black.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var blueIcon = new L.Icon({
+		iconUrl: './icon_images/blue.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var greenIcon = new L.Icon({
+		iconUrl: './icon_images/green.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var greyIcon = new L.Icon({
+		iconUrl: './icon_images/grey.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var orangeIcon = new L.Icon({
+		iconUrl: './icon_images/orange.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var redIcon = new L.Icon({
+		iconUrl: './icon_images/red.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var violetIcon = new L.Icon({
+		iconUrl: './icon_images/violet.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	var yellowIcon = new L.Icon({
+		iconUrl: './icon_images/yellow.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	
+	
+	
+	<!-- ROW 1 -->
+	
+	//var a01 = L.latLng([165.5, -173]);
+	//L.marker(a01, {icon: blueIcon}).addTo(map).bindPopup("<b>My Location</b>");
+	
+	<!-- ROW 2	-->
+	
+	<!-- ROW 3 -->
+	
+	var h03 = L.latLng([117.75, -45.75]);
+	L.marker(h03, {icon: blueIcon}).addTo(map).bindPopup("<b>Bell Tower</b></br>"+
+	"<i>This ancient tower once housed a massive bell. It was recovered by a party of adventurers.</i>")
+	
+	<!-- ROW 4 -->
+	
+	var m04 = L.latLng([89.25, 43.00]);
+	L.marker(m04, {icon: blueIcon}).addTo(map).bindPopup("<b>Mind Masters' Basement</b></br>"+
+	"<i>A hole in the ground by the bay leads to a basement where several duergar and a mindwitness were found.</i>")
+	
+	<!-- ROW 5 -->
+	
+	<!-- ROW 6 -->
+	
+	var f06 = L.latLng([47.75, -82.50]);
+	L.marker(f06, {icon: blueIcon}).addTo(map).bindPopup("<b>Ruined Factory</b></br>"+
+	"<i>A magical chocolate factory found inside of a restored building in the ruins.</i>")
+	
+	var p06 = L.latLng([42.75, 100.00]);
+	L.marker(p06, {icon: blueIcon}).addTo(map).bindPopup("<b>Kraken Cult</b></br>"+
+	"<i>The cult of the kraken once had its headquarters in the ruins by the shore of the bay. "+
+	"In the adventure in which the cult attempted to steal Gombold's ship, the Tide Dancer, the cult was apparently exterminated.</i>")
+	
+	<!-- ROW 7 -->
+	
+	<!-- ROW 8 -->
+	
+	<!-- ROW 9 -->
+	
+	var r09 = L.latLng([-24.125, 137.875]);
+	L.marker(r09, {icon: blueIcon}).addTo(map).bindPopup("<b>Boar's Sheaf</b></br>"+
+	"<i>An ancient shop in which lizardfolk and a banshee were discovered.</i>")
+	
+	<!-- ROW 10 -->
+	
+	var e10 = L.latLng([-48.25, -100.25]);
+	L.marker(e10, {icon: blueIcon}).addTo(map).bindPopup("<b>Medusa's Mausoleum</b></br>"+
+	"<i>An ancient mausoleum in the ruins was once inhabited by a medusa and her army of stone-cursed statues and clockwork golems. "+
+	"The stone-cursed and golems were destroyed and the medusa relocated elsewhere.</i>")
+	
+	var s10_1 = L.latLng([-39.125, 151.375]);
+	L.marker(s10_1, {icon: blueIcon}).addTo(map).bindPopup("<b>Sunken Temple of the Sphinx</b></br>"+
+	"<i>A cave in the western bank of the Olteus River across from the Market District leads to ancient catacombs containing a sphinx and many undead.</i>")
+	
+	var s10_2 = L.latLng([-52.00, 157.5]);
+	L.marker(s10_2, {icon: blueIcon}).addTo(map).bindPopup("<b>Golem's Tomb</b></br>"+
+	"<i>An amulet was found in this tomb and taken to Brightshore, which led to the awakening of a massive golem that destroyed most of the River District.</i>")
+	
+	<!-- ROW 11 -->
+	
+	var r11 = L.latLng([-77.125, 136.375]);
+	L.marker(r11, {icon: blueIcon}).addTo(map).bindPopup("<b>Marco's Summoning Circle</b></br>"+
+	"<i>A stairway in the southeastern outskirts of the ruins leads down into the chamber where Council leader Orrin's son Marco was seen summoning devils.</i>")
+	
+	<!-- ROW 12 -->
+	
+	var q12 = L.latLng([-94.00, 119.00]);
+	L.marker(q12, {icon: blueIcon}).addTo(map).bindPopup("<b>Abandoned Manor</b></br>"+
+	"<i>A large abandoned structure. Nearby, adventurers Atwood and Zerck are starting a ranch for horses.</i>")
+	
+	<!-- ROW 13 -->
+	
+	var q13 = L.latLng([-116.5, 121.5]);
+	L.marker(q13, {icon: blueIcon}).addTo(map).bindPopup("<b>Zerck's Bunker</b></br>"+
+	"<i>Owner:  Zerck (PC)</i>")
+	
+	var r13 = L.latLng([-116.5, 132.00]);
+	L.marker(r13, {icon: blueIcon}).addTo(map).bindPopup("<b>Atwood's Farm</b></br>"+
+	"<i>Owner: Atwood (PC)</i>")
+	
+	<!-- ROW 14 -->
+	
+	var j14 = L.latLng([-136.5, -6.75]);
+	L.marker(j14, {icon: blueIcon}).addTo(map).bindPopup("<b>Manticore Tower</b></br>"+
+	"<i>A tower where a manticore and its baby were found.</i>")
+	
+	<!-- ROW 15 -->
+	
+	<!-- ROW 16 -->
+	
+	
+	
+	
+	map.setView( [0, 0], 1);
+	
+	<!-- Used for on click to get coordinates. Comment out during prod rollout -->
+	//var popup = L.popup();
+	//function onMapClick(e){
+		//popup
+			//.setLatLng(e.latlng)
+			//.setContent("LatLong:  " + e.latlng.toString())
+			//.openOn(map);
+	//}
+	//map.on('click', onMapClick);
+	
+
+</script>
+
+</body>
+</html>
