@@ -23,16 +23,22 @@
 <body>
 <div id='map'></div>
 
-<!--  Order for points is as follows:
+<!--
 
-	- Camps
-	- Inhabited Cities and Villages
-	- Monster Locations
-	- Ruins
-	- Water Features
-	- Unsure
+	The order for placing points on the continent map is as follows:
 	
-	-->
+	TYPE		DESCRIPTION
+	Coastline 	locations on the mainland coastline
+	Desert		locations that exist in the desert biome
+	Grassland	locations that exist in the grassland biome
+	Island		locations that exist on an island
+	Mountains	locations that exist in the mountain biome
+	Savanna		locations that exist in the savanna biome
+	Tropics		locations that exist in the tropics/jungle biome
+	Water		water features that exist anywere on the map, such as bays, lakes, oceans, rivers, swamps, waterfalls
+	Woods		locations that exist in the woods/forest biome
+	
+-->
 
 <script>
 
@@ -49,7 +55,7 @@
 
     
 	<!-- Default markers in various colors -->
-	8
+	
 	var blackIcon = new L.Icon({
 		iconUrl: './icon_images/black.png',
 		shadowUrl: './icon_images/marker-shadow.png',
@@ -122,47 +128,170 @@
 		shadowSize: [41, 41]
 	});
 	
-	<!-- CAMPS -->
 	
-	<!-- INHABITED CITIES AND VILLAGES -->
+	<!-- COASTLINE -->
 	
+	// Brightshore
 	var brightshore = L.latLng([134.29, 307.88]);
-	L.marker(brightshore, {icon: blueIcon}).addTo(map).bindPopup("<b>Brightshore</b>");
+	L.marker(brightshore, {icon: blueIcon}).addTo(map).bindPopup("<b>Brightshore</b></br>"+
+	"<i>Brightshore is a young, but thriving colony situated at the tip of Founders Bay on the northeastern coast. Established 23 years ago, "+
+	"it was built on top of and within the ruins of an ancient city of unknown origin. Since its founding, the colony has attracted several "+
+	"waves of new settlers from other lands.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:hub_city'>Brightshore Wiki</a>");
 	
-	<!-- MONSTER LOCATIONS -->
+	// East Lighthouse
+	var eastLighthouse = L.latLng([171.59, 392.16]);
+	L.marker(eastLighthouse, {icon: blueIcon}).addTo(map).bindPopup("<b>East Lighthouse</b>");
 	
-	
-	<!-- RUINS -->
-	
-	var sidos = L.latLng([144.30, 299.25]);
-	L.marker(sidos, {icon: blueIcon}).addTo(map).bindPopup("<b>Sidos</b>");
-	
-	
-	<!-- WATER FEATURES -->
-	
-	var foundersBay = L.latLng([176.53, 333.75]);
-	L.marker(foundersBay, {icon: blueIcon}).addTo(map).bindPopup("<b>Founders Bay</b>");
-	
-	
-	<!-- UNSURE -->
-	
+	// Goblin Shipyard
 	var goblinShipyard = L.latLng([203.37, 312.75]);
-	L.marker(goblinShipyard, {icon: blueIcon}).addTo(map).bindPopup("<b>Goblin Shipyard</b>");
+	L.marker(goblinShipyard, {icon: blueIcon}).addTo(map).bindPopup("<b>Goblin Shipyard</b></br>"+
+	"<i>A cove on the southern cliffs of Shady Hook. Once the shipyard of Magu's army.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:goblin_shipyard'>Brightshore Wiki</a>");
 	
+	// Klamas
 	var klamas = L.latLng([201.27, 284.75]);
-	L.marker(klamas, {icon: blueIcon}).addTo(map).bindPopup("<b>Klamas</b>");
+	L.marker(klamas, {icon: blueIcon}).addTo(map).bindPopup("<b>Klamas</b></br>"+
+	"<i>The ruins of a once great library and the city that was built around it. 4 days north of Brightshore.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:klamas_library'>Brightshore Wiki</a>");
 	
-	var saltRock = L.latLng([176.28, 304.75]);
-	L.marker(saltRock, {icon: blueIcon}).addTo(map).bindPopup("<b>Salt Rock</b>");
+	// Saltrock
+	var saltrock = L.latLng([176.28, 304.75]);
+	L.marker(saltrock, {icon: blueIcon}).addTo(map).bindPopup("<b>Salt Rock</b>");
 	
+	// Shady Hook
 	var shadyHook = L.latLng([212.51, 316.75]);
 	L.marker(shadyHook, {icon: blueIcon}).addTo(map).bindPopup("<b>Shady Hook</b>");
 	
+	// Tierrios
+	var tierrios = L.latLng([136.88, 343.19]);
+	L.marker(tierrios, {icon: blueIcon}).addTo(map).bindPopup("<b>Tierrios</b>");
+	
+	
+	<!-- DESERT -->
+	
+	
+	<!-- GRASSLAND -->
+	
+	// Griffin Nest
+	var griffinNest = L.latLng([124.75, 251.22]);
+	L.marker(griffinNest, {icon: blueIcon}).addTo(map).bindPopup("<b>Griffin Nest</b></br>"+
+	"<i>A griffon nest was found by the Menran River.</i>");
+	
+	
+	<!-- ISLAND -->
+	
+	// Harpies' Lighthouse
+	var harpiesLighthouse = L.latLng([251.47, 338.41]);
+	L.marker(harpiesLighthouse, {icon: blueIcon}).addTo(map).bindPopup("<b>Harpies' Lighthouse</b>");
+	
+	// Lookout Island
+	var lookoutIsland = L.latLng([255.34, 335.59]);
+	L.marker(lookoutIsland, {icon: blueIcon}).addTo(map).bindPopup("<b>Lookout Island</b></br>"+
+	"<i>A small island to the north of Founders Bay.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:lookout_island'>Brightshore Wiki</a>");
+	
+	<!-- MOUNTAINS -->
+	
+	
+	<!-- SAVANNA -->
+	
+	
+	<!-- TROPICS -->
+	
+	
+	
+	<!-- WATER -->
+	
+	// Ava River
+	var avaRiver = L.latLng([79.75, 304.84]);
+	L.marker(avaRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Ava River</b>");
+	
+	// Founders' Bay
+	var foundersBay = L.latLng([176.53, 333.75]);
+	L.marker(foundersBay, {icon: blueIcon}).addTo(map).bindPopup("<b>Founders Bay</b>");
+	
+	// Menran River
+	var menranRiver = L.latLng([133.34, 268.44]);
+	L.marker(menranRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Menran River</b>");
+	
+	// Olteus River
+	var olteusRiver = L.latLng([103.78, 291.19]);
+	L.marker(olteusRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Olteus River</b>");
+	
+	// Unre River
+	var unreRiver = L.latLng([150.88, 292.06]);
+	L.marker(unreRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Unre River</b>");
+	
+	// Woodrim Lake
+	var woodrimLake = L.latLng([133.5, 244.09]);
+	L.marker(woodrimLake, {icon: blueIcon}).addTo(map).bindPopup("<b>Woodrim Lake</b>");
+	
+	
+	<!-- WOODS -->
+	
+	// Ava River Ruins
+	var avaRiverRuins = L.latLng([88.75, 307.625]);
+	L.marker(avaRiverRuins, {icon: blueIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
+	"<i>A ruined city to the southeast of Brightshore on the banks of the Ava River. Explored early on.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:ava_river_ruins'>Brightshore Wiki</a>");
+	
+	// Corma
+	var corma = L.latLng([86.28, 251.19]);
+	L.marker(corma, {icon: blueIcon}).addTo(map).bindPopup("<b>Corma</b></br>"+
+	"<i>A ruined city 5 days south of Brightshore. Once thought to be dwarven in origin, explorers discovered it was not. They found a black pudding, mimic, and several undead creatures within.</i>");
+	
+	// Goblin Village
+	var goblinVillage = L.latLng([79.53, 280.84]);
+	L.marker(goblinVillage, {icon: blueIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	"<i>Adventurers found (and razed) a village of goblins in the woods after the goblin invasion of Brightshore.</i>");
+	
+	// Hellion's Mouth
+	var hellionsMouth = L.latLng([121.5, 295.97]);
+	L.marker(hellionsMouth, {icon: blueIcon}).addTo(map).bindPopup("<b>Hellion's Mouth</b></br>"+
+	"<i>A cave 1 day southwest of Brightshore. Contains a portal to the Abyss.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hellions_mouth'>Brightshore Wiki</a>");
+	
+	// Hulder's Wood
+	var huldersWood = L.latLng([122.81, 300.38]);
+	L.marker(huldersWood, {icon: blueIcon}).addTo(map).bindPopup("<b>Hulder's Wood</b></br>"+
+	"<i>A patch of forest once haunted by a hulder. 1 day southwest of Brightshore.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hulders_wood'>Brightshore Wiki</a>");
+	
+	// Kavonia Ma
+	var kavoniaMa = L.latLng([95.94, 322.88]);
+	L.marker(kavoniaMa, {icon: blueIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b>");
+	
+	// Min Lue
+	var minLue = L.latLng([110.56, 344.16]);
+	L.marker(minLue, {icon: blueIcon}).addTo(map).bindPopup("<b>Min Lue</b></br>"+
+	"<i>A large ruined city 3 days southeast of Brightshore on the Ava River. Surrounded by fields of bones and inhabited by phantoms and undead creatures.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:min_lue'>Brightshore Wiki</a>");
+	
+	// Olteus River Ruins
+	var olteusRiverRuins = L.latLng([117.91, 309.84]);
+	L.marker(olteusRiverRuins, {icon: blueIcon}).addTo(map).bindPopup("<b>Olteus River Ruins</b></br>"+
+	"<i>A ruined city 1 day south of Brightshore on the eastern bank of the Olteus River. Explored early on.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:olteus_river_ruins'>Brightshore Wiki</a>");
+	
+	// Shadow Tower
+	var shadowTower = L.latLng([94.47, 340.91]);
+	L.marker(shadowTower, {icon: blueIcon}).addTo(map).bindPopup("<b>Shadow Tower</b>");
+	
+	// Sidos
+	var sidos = L.latLng([144.41, 300.84]);
+	L.marker(sidos, {icon: blueIcon}).addTo(map).bindPopup("<b>Sidos</b></br>"+
+	"<i>A ruined city 1 day north of Brightshore. Explored early on. Contains a teleportation circle, now destroyed.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:sidos'>Brightshore Wiki</a>");
+	
+	// Stalwart Shield Camp
+	var stalwartShieldCamp = L.latLng([148.97, 250.88]);
+	L.marker(stalwartShieldCamp, {icon: blueIcon}).addTo(map).bindPopup("<b>Stalwart Shield Camp</b>");
 	
 	
 	
 	
-	map.setView( [142, 311], 2);
+	map.setView( [134.29, 307.88], 2);
 	
 	<!-- Used for on click to get coordinates. Comment out during prod rollout -->
 	//var popup = L.popup();
