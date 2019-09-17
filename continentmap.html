@@ -201,6 +201,10 @@
 	
 	<!-- MOUNTAINS -->
 	
+	// Zassa's Peak
+	var zassasPeak = L.latLng([-0.94, 234.38]);
+	L.marker(zassasPeak, {icon: blueIcon}).addTo(map).bindPopup("<b>Zassa's Peak</b>");
+	
 	
 	<!-- SAVANNA -->
 	
@@ -249,6 +253,10 @@
 	L.marker(corma, {icon: blueIcon}).addTo(map).bindPopup("<b>Corma</b></br>"+
 	"<i>A ruined city 5 days south of Brightshore. Once thought to be dwarven in origin, explorers discovered it was not. They found a black pudding, mimic, and several undead creatures within.</i>");
 	
+	// Covet
+	var covet = L.latLng([161.22, 365.38]);
+	L.marker(covet, {icon: blueIcon}).addTo(map).bindPopup("<b>Covet</b>");
+	
 	// Goblin Village
 	var goblinVillage = L.latLng([79.53, 280.84]);
 	L.marker(goblinVillage, {icon: blueIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
@@ -269,6 +277,10 @@
 	// Kavonia Ma
 	var kavoniaMa = L.latLng([95.94, 322.88]);
 	L.marker(kavoniaMa, {icon: blueIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b>");
+	
+	// Lavonia
+	var lavonia = L.latLng([39.41, 301.50]);
+	L.marker(lavonia, {icon: blueIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
 	
 	// Min Lue
 	var minLue = L.latLng([110.56, 344.16]);
@@ -303,8 +315,8 @@
     legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'iLegend');
-		grades = ['Dense Wood','Light Wood', 'Grassland', 'Low Mountain', 'High Mountain', 'Desert', 'Savanna', 'Light Tropics', 'Dense Tropics'],
-		labels = ['./css_images/Key_DenseForest.png', './css_images/Key_LightForest.png', './css_images/Key_Grassland.png', './css_images/Key_LowMountain.png', './css_images/Key_HighMountain.png', './css_images/Key_Desert.png', './css_images/Key_Savanna.png', './css_images/Key_LightTropics.png', './css_images/Key_DenseTropics.png'];
+		grades = ['Dense Wood','Light Wood', 'Grassland', 'Low Mountain', 'High Mountain', 'Desert', 'Savanna', 'Light Tropics', 'Dense Tropics', '1 hex = 24 miles'],
+		labels = ['./css_images/Key_DenseForest.png', './css_images/Key_LightForest.png', './css_images/Key_Grassland.png', './css_images/Key_LowMountain.png', './css_images/Key_HighMountain.png', './css_images/Key_Desert.png', './css_images/Key_Savanna.png', './css_images/Key_LightTropics.png', './css_images/Key_DenseTropics.png', './css_images/Key_Hex.png'];
 		
 		for (var i = 0; i < grades.length; i++) {
 
