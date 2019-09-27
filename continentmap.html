@@ -25,6 +25,7 @@
 			border: 1px solid black;
 			border-radius: 5px;
 		}
+		
 		.waterClass {
 			background: none;
 			border: none;
@@ -62,6 +63,26 @@
 		}
 		
 		.leaflet-tooltip-right.mountainClass::before{
+			border-right-color: transparent;
+		}
+		
+		.landClass {
+			background: none;
+			border: none;
+			box-shadow: none;
+			font-size: 12px;
+			color: white;
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-style: italics;
+			text-align: center;
+			text-shadow: black 0.1em 0.1em 0.2em;
+		}
+		
+		.leaflet-tooltip-left.landClass::before{
+			border-left-color: transparent;
+		}
+		
+		.leaflet-tooltip-right.landClass::before{
 			border-right-color: transparent;
 		}
 		
@@ -186,7 +207,7 @@
 	
 	<!-- Custom markers -->
 	// ORDER:
-	// brightshoreIcon, caveIcon, goblinIcon, ruinsIcon, towerIcon, treeLeafyIcon
+	// brightshoreIcon, caveIcon, goblinIcon, ruinsIcon, towerIcon, treeLeafyIcon, treePineIcon, villageIcon
 	
 	var brightshoreIcon = new L.Icon({
 		iconUrl: './icon_images/BrightshoreTower.png',
@@ -248,6 +269,26 @@
 		shadowAnchor: [12, 42]
 	});
 	
+	var treePineIcon = new L.Icon({
+		iconUrl: './icon_images/TreePine.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 35],
+		iconAnchor: [12, 30],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41],
+		shadowAnchor: [12, 42]
+	});
+	
+	var villageIcon = new L.Icon({
+		iconUrl: './icon_images/Hut.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [25, 35],
+		iconAnchor: [12, 30],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41],
+		shadowAnchor: [04, 42]
+	});
+	
 	
 	<!-- COASTLINE -->
 	
@@ -277,15 +318,16 @@
 	
 	// Saltrock
 	var saltrock = L.latLng([176.28, 304.75]);
-	L.marker(saltrock, {icon: blueIcon}).addTo(map).bindPopup("<b>Salt Rock</b>");
+	L.marker(saltrock, {icon: caveIcon}).addTo(map).bindPopup("<b>Salt Rock</b>");
 	
 	// Shady Hook
-	var shadyHook = L.latLng([212.51, 316.75]);
-	L.marker(shadyHook, {icon: blueIcon}).addTo(map).bindPopup("<b>Shady Hook</b>");
+	var shadyHook = L.latLng([212.51, 326.75]);
+	//L.marker(shadyHook, {icon: blueIcon}).addTo(map).bindPopup("<b>Shady Hook</b>");
+	L.marker(shadyHook, {icon: noIcon}).bindTooltip("Shady Hook", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
 	
 	// Tierrios
 	var tierrios = L.latLng([136.88, 343.19]);
-	L.marker(tierrios, {icon: blueIcon}).addTo(map).bindPopup("<b>Tierrios</b>");
+	L.marker(tierrios, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Tierrios</b>");
 	
 	
 	<!-- DESERT -->
@@ -295,7 +337,7 @@
 	
 	// Griffin Nest
 	var griffinNest = L.latLng([124.75, 251.22]);
-	L.marker(griffinNest, {icon: blueIcon}).addTo(map).bindPopup("<b>Griffin Nest</b></br>"+
+	L.marker(griffinNest, {icon: caveIcon}).addTo(map).bindPopup("<b>Griffin Nest</b></br>"+
 	"<i>A griffon nest was found by the Menran River.</i>");
 	
 	
@@ -303,13 +345,14 @@
 	
 	// Harpies' Lighthouse
 	var harpiesLighthouse = L.latLng([251.47, 338.41]);
-	L.marker(harpiesLighthouse, {icon: towerIcon}).addTo(map).bindPopup("<b>Harpies' Lighthouse</b>");
+	L.marker(harpiesLighthouse, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Harpies' Lighthouse</b></br>"+
+	"<i>Toppled ruined tower on Lookout Island: a small island to the north of Founders Bay.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:lookout_island'>Brightshore Wiki</a>");
 	
 	// Lookout Island
 	var lookoutIsland = L.latLng([255.34, 335.59]);
-	L.marker(lookoutIsland, {icon: blueIcon}).addTo(map).bindPopup("<b>Lookout Island</b></br>"+
-	"<i>A small island to the north of Founders Bay.</i></br></br>"+
-	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:lookout_island'>Brightshore Wiki</a>");
+	//L.marker(lookoutIsland, {icon: blueIcon}).addTo(map).bindPopup("<b>Lookout Island</b>");
+	L.marker(lookoutIsland, {icon: noIcon}).bindTooltip("Lookout</br>Island", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
 	
 	<!-- MOUNTAINS -->
 	
@@ -324,6 +367,12 @@
 	
 	<!-- TROPICS -->
 	
+	var boviomatua = L.latLng([-33.43, 409.63]);
+	L.marker(boviomatua, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Boviomatua</b></br>"+
+	"<i>The ruins of an ancient coastal city found in the jungles to the far southeast.</i>");
+	
+	var goodleafJungle = L.latLng([-24.06, 410.63]);
+	L.marker(goodleafJungle, {icon: noIcon}).bindTooltip("Goodleaf Jungle", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
 	
 	
 	<!-- WATER -->
@@ -343,7 +392,7 @@
 	L.marker(menranRiver, {icon: noIcon}).bindTooltip("Menran</br>River", {permanent: true, offset: [-5, -5], className: 'waterClass'}).openTooltip().addTo(map);
 	
 	// Olteus River
-	var olteusRiver = L.latLng([103.78, 291.19]);
+	var olteusRiver = L.latLng([103.78, 285.19]);
 	//L.marker(olteusRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Olteus River</b>");
 	L.marker(olteusRiver, {icon: noIcon}).bindTooltip("Olteus</br>River", {permanent: true, offset: [-5, -5], className: 'waterClass'}).openTooltip().addTo(map);
 	
@@ -368,19 +417,27 @@
 	"<i>A ruined city to the southeast of Brightshore on the banks of the Ava River. Explored early on.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:ava_river_ruins'>Brightshore Wiki</a>");
 	
+	// Copper Dragon's Cave
+	var copperDragonCave = L.latLng([103.03, 310.5]);
+	L.marker(copperDragonCave, {icon: caveIcon}).addTo(map).bindPopup("<b>Copper Dragon's Cave</b>");
+	
 	// Corma
 	var corma = L.latLng([86.28, 251.19]);
 	L.marker(corma, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Corma</b></br>"+
 	"<i>A ruined city 5 days south of Brightshore. Once thought to be dwarven in origin, explorers discovered it was not. They found a black pudding, mimic, and several undead creatures within.</i>");
 	
 	// Covet
-	var covet = L.latLng([161.22, 365.38]);
-	L.marker(covet, {icon: blueIcon}).addTo(map).bindPopup("<b>Covet</b>");
+	var covet = L.latLng([160.4, 363.5]);
+	L.marker(covet, {icon: treePineIcon}).addTo(map).bindPopup("<b>The Covet</b>");
 	
 	// Goblin Village
 	var goblinVillage = L.latLng([79.53, 280.84]);
-	L.marker(goblinVillage, {icon: goblinIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	L.marker(goblinVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
 	"<i>Adventurers found (and razed) a village of goblins in the woods after the goblin invasion of Brightshore.</i>");
+	
+	// Hags' Den
+	var hagsDen = L.latLng([102.66, 302.125]);
+	L.marker(hagsDen, {icon: caveIcon}).addTo(map).bindPopup("<b>Hags' Den</b>");
 	
 	// Hellion's Mouth
 	var hellionsMouth = L.latLng([121.5, 295.97]);
@@ -396,11 +453,15 @@
 	
 	// Kavonia Ma
 	var kavoniaMa = L.latLng([95.94, 322.88]);
-	L.marker(kavoniaMa, {icon: blueIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b>");
+	L.marker(kavoniaMa, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b>");
 	
 	// Lavonia
-	var lavonia = L.latLng([39.41, 301.50]);
-	L.marker(lavonia, {icon: blueIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
+	var lavonia = L.latLng([39.65, 301.13]);
+	L.marker(lavonia, {icon: villageIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
+	
+	// Mannimloth
+	var mannimloth = L.latLng([157.45, 374.81]);
+	L.marker(mannimloth, {icon: treePineIcon}).addTo(map).bindPopup("<b>M&aacute;nn&iacute;mloth</b>");
 	
 	// Min Lue
 	var minLue = L.latLng([110.56, 344.16]);
@@ -426,7 +487,11 @@
 	
 	// Stalwart Shield Camp
 	var stalwartShieldCamp = L.latLng([148.97, 250.88]);
-	L.marker(stalwartShieldCamp, {icon: goblinIcon}).addTo(map).bindPopup("<b>Stalwart Shield Camp</b>");
+	L.marker(stalwartShieldCamp, {icon: villageIcon}).addTo(map).bindPopup("<b>Stalwart Shield Camp</b>");
+	
+	// Wariroost
+	var wariroost = L.latLng([165.75, 379.19]);
+	L.marker(wariroost, {icon: treePineIcon}).addTo(map).bindPopup("<b>Wariroost</b>");
 
 	<!-- Legend -->
 	<!-- Source:  https://stackoverflow.com/questions/37701211/custom-legend-image-as-legend-in-leaflet-map/37703982  -->
@@ -435,8 +500,44 @@
     legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'iLegend');
-		grades = ['Brightshore', 'Cave', 'Forest', 'Goblin Location', 'Ruins', 'Tower', 'Other Location', 'Dense Wood','Light Wood', 'Grassland', 'Low Mountain', 'High Mountain', 'Desert', 'Savanna', 'Light Tropics', 'Dense Tropics', '1 hex = 24 miles'],
-		labels = ['./icon_images/BrightshoreTower.png', './icon_images/Cave.png', './icon_images/TreeLeafy.png', './icon_images/Goblin.png', './icon_images/Ruins.png', './icon_images/Tower.png', './icon_images/blue.png', './css_images/Key_DenseForest.png', './css_images/Key_LightForest.png', './css_images/Key_Grassland.png', './css_images/Key_LowMountain.png', './css_images/Key_HighMountain.png', './css_images/Key_Desert.png', './css_images/Key_Savanna.png', './css_images/Key_LightTropics.png', './css_images/Key_DenseTropics.png', './css_images/Key_Hex.png'];
+		grades = [	'Brightshore',
+					'Cave',
+					'Deciduous Forest',
+					'Evergreen Forest',
+					'Goblin Location',
+					'Ruins',
+					'Tower',
+					'Village',
+					'Dense Wood',
+					'Light Wood',
+					'Grassland',
+					'Low Mountain',
+					'High Mountain',
+					'Desert',
+					'Savanna',
+					'Light Tropics',
+					'Dense Tropics',
+					'1 hex = 24 miles'
+				],
+		labels = [	'./icon_images/BrightshoreTower.png',
+					'./icon_images/Cave.png',
+					'./icon_images/TreeLeafy.png',
+					'./icon_images/TreePine.png',
+					'./icon_images/Goblin.png',
+					'./icon_images/Ruins.png',
+					'./icon_images/Tower.png',
+					'./icon_images/Hut.png',
+					'./css_images/Key_DenseForest.png',
+					'./css_images/Key_LightForest.png',
+					'./css_images/Key_Grassland.png',
+					'./css_images/Key_LowMountain.png',
+					'./css_images/Key_HighMountain.png',
+					'./css_images/Key_Desert.png',
+					'./css_images/Key_Savanna.png',
+					'./css_images/Key_LightTropics.png',
+					'./css_images/Key_DenseTropics.png',
+					'./css_images/Key_Hex.png'
+				];
 		
 		for (var i = 0; i < grades.length; i++) {
 
@@ -447,6 +548,11 @@
     return div;
     };
     legend.addTo(map);
+	
+	
+	<!-- Control.Attribution -->
+	
+	map.attributionControl.addAttribution('Icons by <a href="http://lorcblog.blogspot.com/">Lorc</a> and <a href="https://delapouite.com/">Delapouite</a> under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> License');
 	
 	
 	

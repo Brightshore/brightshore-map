@@ -8,7 +8,14 @@ This is meant to make our world of Brightshore have a map to better interact wit
 
 We are still working on the best way to mature this project, including dedicated releases, automatic builds for CI/CD, and automated tests, eventually. As always join us on the Brightshore Slack in #leaflet-map to lend us a hand!
 
+## Version History
+
+v1.01   09-27-2019
+v1.00   Initial creation
+
 ## Copyright
 
-All map contents, unique creations, artifacts, likenesses, and art are copyright of I'm Board LLC, its owners, and related entities. 
+All map contents, unique creations, artifacts, likenesses, and art are copyright of I'm Board LLC, its owners, and related entities.
+
+Certain icons used with attribution under CC BY 3.0 license (https://creativecommons.org/licenses/by/3.0/)  Artists: Lorc (lorcblog.blogspot.com), Delapouite (delapouite.com).
 
