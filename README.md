@@ -10,6 +10,7 @@ We are still working on the best way to mature this project, including dedicated
 
 ## Version History
 
+v1.02	09-27-2019
 v1.01   09-27-2019
 v1.00   Initial creation
 
