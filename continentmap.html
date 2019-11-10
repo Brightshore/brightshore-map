@@ -208,7 +208,7 @@
 	
 	<!-- Custom markers -->
 	// ORDER:
-	// brightshoreIcon, caveIcon, goblinIcon, ruinsIcon, towerIcon, treeLeafyIcon, treePineIcon, villageIcon
+	// brightshoreIcon, caveIcon, dragonIcon, goblinIcon, ruinsIcon, ruinsOutlineIcon, towerIcon, treeLeafyIcon, treePineIcon, villageIcon, villageOutlineIcon
 	
 	var brightshoreIcon = new L.Icon({
 		iconUrl: './icon_images/BrightshoreTower.png',
@@ -225,6 +225,16 @@
 		shadowUrl: './icon_images/marker-shadow.png',
 		iconSize: [28, 28],
 		iconAnchor: [12, 30],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41],
+		shadowAnchor: [04, 42]
+	});
+	
+	var dragonIcon = new L.Icon({
+		iconUrl: './icon_images/Dragon.png',
+		shadowUrl: './icon_images/marker-shadow.png',
+		iconSize: [32, 32],
+		iconAnchor: [6, 30],
 		popupAnchor: [1, -34],
 		shadowSize: [41, 41],
 		shadowAnchor: [04, 42]
@@ -248,6 +258,13 @@
 		popupAnchor: [1, -34],
 		shadowSize: [41, 41],
 		shadowAnchor: [12, 42]
+	});
+	
+	var ruinsOutlineIcon = new L.Icon({
+		iconUrl: './icon_images/RuinsOutline.png',
+		iconSize: [32, 30],
+		iconAnchor: [12, 30],
+		popupAnchor: [1, -34]
 	});
 	
 	var towerIcon = new L.Icon({
@@ -290,6 +307,12 @@
 		shadowAnchor: [04, 42]
 	});
 	
+	var villageOutlineIcon = new L.Icon({
+		iconUrl: './icon_images/HutOutline.png',
+		iconSize: [31, 27],
+		iconAnchor: [12, 30],
+		popupAnchor: [1, -34]
+	});
 	
 	<!-- COASTLINE -->
 	
@@ -300,6 +323,11 @@
 	"it was built on top of and within the ruins of an ancient city of unknown origin. Since its founding, the colony has attracted several "+
 	"waves of new settlers from other lands.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:hub_city'>Brightshore Wiki</a>");
+	
+	// Chamberk
+	var chamberk = L.latLng([77.41, 378.84]);
+	L.marker(chamberk, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Chamberk</b></br>"+
+	"<i>A ruined city on the east coast straddling a river. The last expedition encountered ancient constructs, but it was otherwise abandoned.</i>");
 	
 	// East Lighthouse
 	var eastLighthouse = L.latLng([171.59, 392.16]);
@@ -328,7 +356,8 @@
 	
 	// Tierrios
 	var tierrios = L.latLng([136.88, 343.19]);
-	L.marker(tierrios, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Tierrios</b>");
+	L.marker(tierrios, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Tierrios</b></br>"+
+	"<i>A ruined city to the east of Brightshore on the coast. Once the lair of the blue dragon Ameot and her kobolds. It has since been cleared out.</i>");
 	
 	
 	<!-- DESERT -->
@@ -414,13 +443,9 @@
 	
 	// Ava River Ruins
 	var avaRiverRuins = L.latLng([88.75, 307.625]);
-	L.marker(avaRiverRuins, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
-	"<i>A ruined city to the southeast of Brightshore on the banks of the Ava River. Explored early on.</i></br></br>"+
+	L.marker(avaRiverRuins, {icon: ruinsOutlineIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
+	"<i>Once a ruined city to the southeast of Brightshore on the banks of the Ava River, this site was wiped off the map when Magu awakened a colossal construct that emerged from underneath it and then stomped through it.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:ava_river_ruins'>Brightshore Wiki</a>");
-	
-	// Copper Dragon's Cave
-	var copperDragonCave = L.latLng([103.03, 310.5]);
-	L.marker(copperDragonCave, {icon: caveIcon}).addTo(map).bindPopup("<b>Copper Dragon's Cave</b>");
 	
 	// Corma
 	var corma = L.latLng([86.28, 251.19]);
@@ -431,10 +456,31 @@
 	var covet = L.latLng([160.4, 363.5]);
 	L.marker(covet, {icon: treePineIcon}).addTo(map).bindPopup("<b>The Covet</b>");
 	
+	// Diamond Mine
+	var diamondMine = L.latLng([176.64, 291.625]);
+	L.marker(diamondMine, {icon: caveIcon}).addTo(map).bindPopup("<b>Diamond Mine</b>");
+	
 	// Goblin Village
 	var goblinVillage = L.latLng([79.53, 280.84]);
-	L.marker(goblinVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	//L.marker(goblinVillage, {icon: transparentVillageIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	L.marker(goblinVillage, {icon: villageOutlineIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	//L.marker(goblinVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
 	"<i>Adventurers found (and razed) a village of goblins in the woods after the goblin invasion of Brightshore.</i>");
+	
+	// Green Dragon's Lair
+	var greenDragonsLair = L.latLng([176.76, 264.75]);
+	L.marker(greenDragonsLair, {icon: dragonIcon}).addTo(map).bindPopup("<b>Green Dragon's Lair</b>");
+	
+	// Gretirrai's Cave
+	var gretiarrisCave = L.latLng([103.03, 310.5]);
+	L.marker(gretiarrisCave, {icon: caveIcon}).addTo(map).bindPopup("<b>Gretirrai's Cave</b></br>"+
+	"<i>A small vine-covered hollow in a wooded hill where the copper dragon Gretirrai lairs.</i>");
+	
+	// Grove
+	var grove = L.latLng([122.81, 301.38]);
+	L.marker(grove, {icon: treeLeafyIcon}).addTo(map).bindPopup("<b>The Grove</b></br>"+
+	"<i>A patch of forest once haunted by a hulder. 2 days southwest of Brightshore. It has since been renamed Thorin's Grove and turned into a haven known for druids and other likeminded adventurers from Brightshore.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hulders_wood'>Brightshore Wiki</a>");
 	
 	// Hags' Den
 	var hagsDen = L.latLng([102.66, 302.125]);
@@ -443,22 +489,17 @@
 	// Hellion's Mouth
 	var hellionsMouth = L.latLng([121.5, 295.97]);
 	L.marker(hellionsMouth, {icon: caveIcon}).addTo(map).bindPopup("<b>Hellion's Mouth</b></br>"+
-	"<i>A cave 1 day southwest of Brightshore. Contains a portal to the Abyss.</i></br></br>"+
+	"<i>A cave 2 days southwest of Brightshore. Contained a portal to the Abyss (now sealed).</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hellions_mouth'>Brightshore Wiki</a>");
 	
-	// Hulder's Wood
-	var huldersWood = L.latLng([122.81, 301.38]);
-	L.marker(huldersWood, {icon: treeLeafyIcon}).addTo(map).bindPopup("<b>Hulder's Wood</b></br>"+
-	"<i>A patch of forest once haunted by a hulder. 1 day southwest of Brightshore.</i></br></br>"+
-	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hulders_wood'>Brightshore Wiki</a>");
-	
 	// Kavonia Ma
-	var kavoniaMa = L.latLng([95.94, 322.88]);
-	L.marker(kavoniaMa, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b>");
+	var kavoniaMa = L.latLng([95.58, 324.875]);
+	L.marker(kavoniaMa, {icon: towerIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b></br>"+
+	"<i> Once a ruined city just inside the Dark Forest, a bridge and keep was built here by the vampire Armastus.</i>");
 	
 	// Lavonia
-	var lavonia = L.latLng([39.65, 301.13]);
-	L.marker(lavonia, {icon: villageIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
+	var lavonia = L.latLng([39.65, 298.13]);
+	L.marker(lavonia, {icon: villageOutlineIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
 	
 	// Mannimloth
 	var mannimloth = L.latLng([157.45, 374.81]);
@@ -476,6 +517,11 @@
 	"<i>A ruined city 1 day south of Brightshore on the eastern bank of the Olteus River. Explored early on.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:olteus_river_ruins'>Brightshore Wiki</a>");
 	
+	// Phipolis
+	var phipolis = L.latLng([48.96, 325.81]);
+	L.marker(phipolis, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Phipolis</b></br>"+
+	"<i>A ruined city west of Skipriver Village. The halflings refer to it as the Tiger's Lair and claim it is cursed by an evil tiger spirit. The ruins have not yet been explored.</i>");
+	
 	// Shadow Tower
 	var shadowTower = L.latLng([94.47, 340.91]);
 	L.marker(shadowTower, {icon: towerIcon}).addTo(map).bindPopup("<b>Shadow Tower</b>");
@@ -485,6 +531,10 @@
 	L.marker(sidos, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Sidos</b></br>"+
 	"<i>A ruined city 1 day north of Brightshore. Explored early on. Contains a teleportation circle, now destroyed.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:sidos'>Brightshore Wiki</a>");
+	
+	// Skipriver Village
+	var skipriverVillage = L.latLng([46.83, 340.875]);
+	L.marker(skipriverVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Skipriver Village</b>");
 	
 	// Stalwart Shield Camp
 	var stalwartShieldCamp = L.latLng([148.97, 250.88]);
