@@ -168,6 +168,20 @@
 	var p10 = L.latLng([-36.69, 105.00]);
 	L.marker(p10, {icon: blueIcon}).addTo(map).bindPopup("<b>Underground Pit Fighting Arena</b>")
 	
+	var s10_reclaimed = L.polygon([
+		[-28.0, 145.5],
+		[-28.0, 164.0],
+		[-47.0, 164.0],
+		[-47.0, 145.5]
+		], {
+		color: 'white'
+		}
+	).addTo(map).bindPopup("<b>Ruins:</b> S10</br>"+
+	"<i>This ruins section has been sold to Brightshore.</i></br></br>"+
+	"<b>Ruins Status:</b> Sold to Brightshore</br>"+
+	"<b>Ruins Reclaimed By:</b> Hall of Hunters</br>"+
+	"<b>Ruins Sold On:</b> Oncemas, Year 24")
+	
 	var s10_1 = L.latLng([-31.08, 151.125]);
 	L.marker(s10_1, {icon: blueIcon}).addTo(map).bindPopup("<b>Sunken Temple of the Sphinx</b></br>"+
 	"<i>A cave in the western bank of the Olteus River across from the Market District leads to ancient catacombs containing a sphinx and many undead.</i>")
