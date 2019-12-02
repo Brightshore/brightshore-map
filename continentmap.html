@@ -86,6 +86,46 @@
 			border-right-color: transparent;
 		}
 		
+		.darkForestClass {
+			background: none;
+			border: none;
+			box-shadow: none;
+			font-size: 12px;
+			color: purple;
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-style: italics;
+			text-align: center;
+			text-shadow: white 0.1em 0.1em 0.2em;
+		}
+		
+		.leaflet-tooltip-left.darkForestClass::before{
+			border-left-color: transparent;
+		}
+		
+		.leaflet-tooltip-right.darkForestClass::before{
+			border-right-color: transparent;
+		}
+		
+		.stalwartShieldClass {
+			background: none;
+			border: none;
+			box-shadow: none;
+			font-size: 12px;
+			color: red;
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-style: italics;
+			text-align: center;
+			text-shadow: white 0.1em 0.1em 0.2em;
+		}
+		
+		.leaflet-tooltip-left.stalwartShieldClass::before{
+			border-left-color: transparent;
+		}
+		
+		.leaflet-tooltip-right.stalwartShieldClass::before{
+			border-right-color: transparent;
+		}
+		
 	</style>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -365,10 +405,27 @@
 	
 	<!-- GRASSLAND -->
 	
+	// Greenreach
+	var greenreach = L.latLng([137.27, 242.38]);
+	L.marker(greenreach, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Greenreach</b></br>"+
+	"<i>Ruins of green stone found near Woodrim Lake.</i>");
+	
 	// Griffin Nest
 	var griffinNest = L.latLng([124.75, 251.22]);
 	L.marker(griffinNest, {icon: caveIcon}).addTo(map).bindPopup("<b>Griffin Nest</b></br>"+
 	"<i>A griffon nest was found by the Menran River.</i>");
+	
+	// Orn
+	var orn = L.latLng([127.20, 257.38]);
+	L.marker(orn, {icon: villageOutlineIcon}).addTo(map).bindPopup("<b>Orn</b></br>"+
+	"<i>Once a farming village of hobgoblins and orcs, reduced to a smoldering ruin by the warforged.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:orn'>Brightshore Wiki</a>");
+	
+	// Skydross
+	var skydross = L.latLng([115.81, 213.0]);
+	L.marker(skydross, {icon: towerIcon}).addTo(map).bindPopup("<b>Skydross</b></br>"+
+	"<i>A large town of hobgoblins and orcs.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:skydross'>Brightshore Wiki</a>");
 	
 	
 	<!-- ISLAND -->
@@ -441,6 +498,16 @@
 	
 	<!-- WOODS -->
 	
+	// Aphydodes
+	var aphydodes = L.latLng([159.29, 201.25]);
+	L.marker(aphydodes, {icon: brightshoreIcon}).addTo(map).bindPopup("<b>Aphydodes</b></br>"+
+	"<i>Capital city of the Stalwart Shield.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:aphydodes'>Brightshore Wiki</a>");
+	
+	// Aukari Pine
+	var aukariPine = L.latLng([143.30, 378.25]);
+	L.marker(aukariPine, {icon: noIcon}).bindTooltip("Aukari Pine", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
+	
 	// Ava River Ruins
 	var avaRiverRuins = L.latLng([88.75, 307.625]);
 	L.marker(avaRiverRuins, {icon: ruinsOutlineIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
@@ -455,6 +522,10 @@
 	// Covet
 	var covet = L.latLng([160.4, 363.5]);
 	L.marker(covet, {icon: treePineIcon}).addTo(map).bindPopup("<b>The Covet</b>");
+	
+	// Dark Forest
+	var darkForest = L.latLng([92.57, 370.00]);
+	L.marker(darkForest, {icon: noIcon}).bindTooltip("Dark Forest", {permanent: true, offset: [0, 0], className: 'darkForestClass'}).openTooltip().addTo(map);
 	
 	// Diamond Mine
 	var diamondMine = L.latLng([176.64, 291.625]);
@@ -491,6 +562,12 @@
 	L.marker(hellionsMouth, {icon: caveIcon}).addTo(map).bindPopup("<b>Hellion's Mouth</b></br>"+
 	"<i>A cave 2 days southwest of Brightshore. Contained a portal to the Abyss (now sealed).</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lore:wilderness:hellions_mouth'>Brightshore Wiki</a>");
+	
+	// Irontooth's Camp
+	var irontoothCamp = L.latLng([148.97, 250.88]);
+	L.marker(irontoothCamp, {icon: villageOutlineIcon}).addTo(map).bindPopup("<b>Irontooth's Camp</b></br>"+
+	"<i>Formerly the camp of Chief Irontooth. Fell to the warforged, now abandoned.</i></br></br>"+
+	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:npcs:irontooth'>Brightshore Wiki</a>");
 	
 	// Kavonia Ma
 	var kavoniaMa = L.latLng([95.58, 324.875]);
@@ -534,11 +611,12 @@
 	
 	// Skipriver Village
 	var skipriverVillage = L.latLng([46.83, 340.875]);
-	L.marker(skipriverVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Skipriver Village</b>");
+	L.marker(skipriverVillage, {icon: villageIcon}).addTo(map).bindPopup("<b>Skipriver Village</b></br>"+
+	"<i>A village of nomadic halflings native to Lorica.</i>");
 	
-	// Stalwart Shield Camp
-	var stalwartShieldCamp = L.latLng([148.97, 250.88]);
-	L.marker(stalwartShieldCamp, {icon: villageIcon}).addTo(map).bindPopup("<b>Stalwart Shield Camp</b>");
+	// Stalwart Shield
+	var stalwartShield = L.latLng([109.06, 220.00]);
+	L.marker(stalwartShield, {icon: noIcon}).bindTooltip("Stalwart Shield", {permanent: true, offset: [0, 0], className: 'stalwartShieldClass'}).openTooltip().addTo(map);
 	
 	// Wariroost
 	var wariroost = L.latLng([165.75, 379.19]);
