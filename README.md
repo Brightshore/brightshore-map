@@ -10,6 +10,8 @@ We are still working on the best way to mature this project, including dedicated
 
 ## Version History
 
+v1.08: 7 Jan 2020, major map reveal
+
 v1.07: 01-05-2020
 
 v1.06: 12-01-2019
