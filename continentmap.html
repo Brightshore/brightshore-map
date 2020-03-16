@@ -145,6 +145,44 @@
 			border-right-color: transparent;
 		}
 		
+		.qatacClass {background: none;
+			border: none;
+			box-shadow: none;
+			font-size: 12px;
+			color: purple;
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-style: italics;
+			text-align: center;
+			text-shadow: white 0.1em 0.1em 0.2em;
+		}
+		
+		.leaflet-tooltip-left.qatacClass::before{
+			border-left-color: transparent;
+		}
+		
+		.leaflet-tooltip-right.qatacClass::before{
+			border-right-color: transparent;
+		}
+		
+		.goliathClass {background: none;
+			border: none;
+			box-shadow: none;
+			font-size: 12px;
+			color: brown;
+			font-family: "Copperplate Gothic Light", Palatino, serif;
+			font-style: italics;
+			text-align: center;
+			text-shadow: white 0.1em 0.1em 0.2em;
+		}
+		
+		.leaflet-tooltip-left.goliathClass::before{
+			border-left-color: transparent;
+		}
+		
+		.leaflet-tooltip-right.goliathClass::before{
+			border-right-color: transparent;
+		}
+		
 	</style>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -418,7 +456,7 @@
 	
 	// East Lighthouse
 	var eastLighthouse = L.latLng([171.59, 392.16]);
-	L.marker(eastLighthouse, {icon: towerIcon}).addTo(map).bindPopup("<b>East Lighthouse</b>");
+	L.marker(eastLighthouse, {icon: ruinsIcon}).addTo(map).bindPopup("<b>East Lighthouse</b>");
 	
 	// Giantspan
 	var giantspan = L.latLng([-102.04, 118.125]);
@@ -464,6 +502,14 @@
 	
 	<!-- GRASSLAND -->
 	
+	// Castimir
+	var castimir = L.latLng([137.5, 41.75]);
+	L.marker(castimir, {icon: brightshoreIcon}).addTo(map).bindPopup("<b>Castimir</b>");
+	
+	// Goliaths
+	var goliaths = L.latLng([144.75, 71.5]);
+	L.marker(goliaths, {icon: noIcon}).bindTooltip("Goliaths", {permanent: true, offset: [0, 0], className: 'goliathClass'}).openTooltip().addTo(map);
+	
 	// Greenreach
 	var greenreach = L.latLng([137.27, 242.38]);
 	L.marker(greenreach, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Greenreach</b></br>"+
@@ -474,15 +520,24 @@
 	L.marker(griffinNest, {icon: caveIcon}).addTo(map).bindPopup("<b>Griffin Nest</b></br>"+
 	"<i>A griffon nest was found by the Menran River.</i>");
 	
-	// Orn
-	var orn = L.latLng([127.20, 257.38]);
-	L.marker(orn, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Orn</b></br>"+
-	"<i>Once a farming village of hobgoblins and orcs, reduced to a smoldering ruin by the warforged.</i></br></br>"+
-	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:orn'>Brightshore Wiki</a>");
+	// Melyviz
+	var melyviz = L.latLng([74.25, 190.125]);
+	L.marker(melyviz, {icon: hutIcon}).addTo(map).bindPopup("<b>Melyviz</b>");
+	
+	// Orn -- Commented JL v1.10
+	//var orn = L.latLng([127.20, 257.38]);
+	//L.marker(orn, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Orn</b></br>"+
+	//"<i>Once a farming village of hobgoblins and orcs, reduced to a smoldering ruin by the warforged.</i></br></br>"+
+	//"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:orn'>Brightshore Wiki</a>");
 	
 	// Qatac
-	var qatac = L.latLng([26.76, 145.375]);
+	var qatac = L.latLng([-1.25, 140.5]);
 	L.marker(qatac, {icon: brightshoreIcon}).addTo(map).bindPopup("<b>Qatac</b>");
+	
+	// Qatac Lan
+	var qatacLan = L.latLng([29.75, 144.5]);
+	L.marker(qatacLan, {icon: noIcon}).bindTooltip("Qatac'Lan", {permanent: true, offset: [0, 0], className: 'qatacClass'}).openTooltip().addTo(map);
+	
 	
 	// Skydross
 	var skydross = L.latLng([115.81, 213.0]);
@@ -495,7 +550,7 @@
 	
 	// Harpies' Lighthouse
 	var harpiesLighthouse = L.latLng([251.47, 338.41]);
-	L.marker(harpiesLighthouse, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Harpies' Lighthouse</b></br>"+
+	L.marker(harpiesLighthouse, {icon: towerIcon}).addTo(map).bindPopup("<b>Harpies' Lighthouse</b></br>"+
 	"<i>Toppled ruined tower on Lookout Island: a small island to the north of Founders Bay.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:lookout_island'>Brightshore Wiki</a>");
 	
@@ -505,6 +560,10 @@
 	L.marker(lookoutIsland, {icon: noIcon}).bindTooltip("Lookout</br>Island", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
 	
 	<!-- MOUNTAINS -->
+	
+	// Abandoned Mine
+	var abandonedMine = L.latLng([51, 100.5]);
+	L.marker(abandonedMine, {icon: caveIcon}).addTo(map).bindPopup("<b>Abandoned Mine</b>");
 	
 	// Zassa's Peak
 	var zassasPeak = L.latLng([2.0, 233.38]);
@@ -558,7 +617,7 @@
 	L.marker(olteusRiver, {icon: noIcon}).bindTooltip("Olteus</br>River", {permanent: true, offset: [-5, -5], className: 'waterClass'}).openTooltip().addTo(map);
 	
 	// Unre River
-	var unreRiver = L.latLng([150.88, 285.06]);
+	var unreRiver = L.latLng([145.88, 285.06]);
 	//L.marker(unreRiver, {icon: blueIcon}).addTo(map).bindPopup("<b>Unre River</b>");
 	L.marker(unreRiver, {icon: noIcon}).bindTooltip("Unre</br>River", {permanent: true, offset: [-5, -5], className: 'waterClass'}).openTooltip().addTo(map);
 	
@@ -582,11 +641,15 @@
 	var aukariPine = L.latLng([143.30, 378.25]);
 	L.marker(aukariPine, {icon: noIcon}).bindTooltip("Aukari Pine", {permanent: true, offset: [0, 0], className: 'landClass'}).openTooltip().addTo(map);
 	
-	// Ava River Ruins
-	var avaRiverRuins = L.latLng([88.75, 307.625]);
-	L.marker(avaRiverRuins, {icon: ruinsOutlineIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
-	"<i>Once a ruined city to the southeast of Brightshore on the banks of the Ava River, this site was wiped off the map when Magu awakened a colossal construct that emerged from underneath it and then stomped through it.</i></br></br>"+
-	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:ava_river_ruins'>Brightshore Wiki</a>");
+	// Ava River Ruins -- Commented JL v1.10
+	//var avaRiverRuins = L.latLng([88.75, 307.625]);
+	//L.marker(avaRiverRuins, {icon: ruinsOutlineIcon}).addTo(map).bindPopup("<b>Ava River Ruins</b></br>"+
+	//"<i>Once a ruined city to the southeast of Brightshore on the banks of the Ava River, this site was wiped off the map when Magu awakened a colossal construct that emerged from underneath it and then stomped through it.</i></br></br>"+
+	//"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:ava_river_ruins'>Brightshore Wiki</a>");
+	
+	// Charpor
+	var charpor = L.latLng([189.125, 118.375]);
+	L.marker(charpor, {icon: ruinsIcon}).addTo(map).bindPopup("<b>Charpor</b>");
 	
 	// Corma
 	var corma = L.latLng([86.28, 251.19]);
@@ -601,12 +664,12 @@
 	var diamondMine = L.latLng([176.64, 291.625]);
 	L.marker(diamondMine, {icon: caveIcon}).addTo(map).bindPopup("<b>Diamond Mine</b>");
 	
-	// Goblin Village
-	var goblinVillage = L.latLng([79.53, 280.84]);
+	// Goblin Village -- Commented JL v1.10
+	//var goblinVillage = L.latLng([79.53, 280.84]);
 	//L.marker(goblinVillage, {icon: transparenthutIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
-	L.marker(goblinVillage, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
+	//L.marker(goblinVillage, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
 	//L.marker(goblinVillage, {icon: hutIcon}).addTo(map).bindPopup("<b>Goblin Village</b></br>"+
-	"<i>Adventurers found (and razed) a village of goblins in the woods after the goblin invasion of Brightshore.</i>");
+	//"<i>Adventurers found (and razed) a village of goblins in the woods after the goblin invasion of Brightshore.</i>");
 	
 	// Green Dragon's Lair
 	var greenDragonsLair = L.latLng([176.76, 264.75]);
@@ -623,9 +686,9 @@
 	"<i>Once haunted by a hulder, now a haven for druids and other likeminded adventurers from Brightshore.</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:grove'>Brightshore Wiki</a>");
 	
-	// Hags' Den
-	var hagsDen = L.latLng([102.66, 302.125]);
-	L.marker(hagsDen, {icon: caveOutlineIcon}).addTo(map).bindPopup("<b>Hags' Den</b>");
+	// Hags' Den -- Commented JL v1.10
+	//var hagsDen = L.latLng([102.66, 302.125]);
+	//L.marker(hagsDen, {icon: caveOutlineIcon}).addTo(map).bindPopup("<b>Hags' Den</b>");
 	
 	// Hellion's Mouth
 	var hellionsMouth = L.latLng([121.5, 295.97]);
@@ -633,24 +696,28 @@
 	"<i>This cave housed a demon cult and a portal to the Abyss (now sealed).</i></br></br>"+
 	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:lorica:hellions_mouth'>Brightshore Wiki</a>");
 	
-	// Irontooth's Camp
-	var irontoothCamp = L.latLng([148.97, 250.88]);
-	L.marker(irontoothCamp, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Irontooth's Camp</b></br>"+
-	"<i>Formerly the camp of Chief Irontooth. Fell to the warforged, now abandoned.</i></br></br>"+
-	"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:npcs:irontooth'>Brightshore Wiki</a>");
+	// Irontooth's Camp   -- Commented JL v1.10
+	//var irontoothCamp = L.latLng([148.97, 250.88]);
+	//L.marker(irontoothCamp, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Irontooth's Camp</b></br>"+
+	//"<i>Formerly the camp of Chief Irontooth. Fell to the warforged, now abandoned.</i></br></br>"+
+	//"For more information, see <a href='http://brightshore.imboardgames.com/wiki/doku.php?id=brightshore:npcs:irontooth'>Brightshore Wiki</a>");
+	
+	// Ivan's Fort
+	var ivansForst = L.latLng([81.75, 265.625]);
+	L.marker(ivansForst, {icon: towerIcon}).addTo(map).bindPopup("<b>Ivan's Fort</b>");
 	
 	// Kavonia Ma
 	var kavoniaMa = L.latLng([95.58, 324.875]);
 	L.marker(kavoniaMa, {icon: towerIcon}).addTo(map).bindPopup("<b>Kavonia Ma</b></br>"+
 	"<i> Once a ruined city just inside the Dark Forest, a bridge and keep was built here by the vampire Armastus.</i>");
 	
-	// Lavonia
-	var lavonia = L.latLng([39.65, 298.13]);
-	L.marker(lavonia, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
+	// Lavonia -- Commented JL v1.10
+	//var lavonia = L.latLng([39.65, 298.13]);
+	//L.marker(lavonia, {icon: hutOutlineIcon}).addTo(map).bindPopup("<b>Lavonia</b>");
 	
-	// Mannimloth
-	var mannimloth = L.latLng([157.45, 374.81]);
-	L.marker(mannimloth, {icon: treePineIcon}).addTo(map).bindPopup("<b>M&aacute;nn&iacute;mloth</b>");
+	// Mannimloth -- Commented JL v1.10
+	//var mannimloth = L.latLng([157.45, 374.81]);
+	//L.marker(mannimloth, {icon: treePineIcon}).addTo(map).bindPopup("<b>M&aacute;nn&iacute;mloth</b>");
 	
 	// Min Lue
 	var minLue = L.latLng([110.56, 344.16]);
@@ -689,8 +756,12 @@
 	"<i>A village of nomadic halflings native to Lorica.</i>");
 	
 	// Stalwart Shield
-	var stalwartShield = L.latLng([109.06, 220.00]);
+	var stalwartShield = L.latLng([140.25, 188]);
 	L.marker(stalwartShield, {icon: noIcon}).bindTooltip("Stalwart Shield", {permanent: true, offset: [0, 0], className: 'stalwartShieldClass'}).openTooltip().addTo(map);
+	
+	// Taheri Home
+	var taheriHome = L.latLng([150.375, 289.75]);
+	L.marker(taheriHome, {icon: hutIcon}).addTo(map).bindPopup("<b>Taheri Home</b>");
 	
 	// Wariroost
 	var wariroost = L.latLng([165.75, 379.19]);
