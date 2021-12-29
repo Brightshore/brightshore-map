@@ -1,5 +1,9 @@
 # README
 
+# Terminal Update
+
+With Brightshore no longer under the aegis of the original developers of this tool, this repository is now in read-only, and mostly kept here for historical purposes.
+
 ## What is this?
 
 This is meant to make our world of Brightshore have a map to better interact with for players and GMs alike. This is maintained here before deployment. Although it's an open-source project based on [Leaflet](https://github.com/Leaflet/Leaflet), this project is a custom operation for I'm Board Games in Middleton, WI
